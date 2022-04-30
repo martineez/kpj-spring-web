@@ -7,6 +7,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- TODO: Define component scan, annotation driven, internal resource view resolver for JSP -->
-	
+	<context:component-scan base-package="cz.inventi.academy.springweb" />
+	<mvc:annotation-driven />
+	<bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name = "prefix" value = "/WEB-INF/view/" />
+		<property name = "suffix" value = ".jsp" />
+	</bean>
 </beans>
