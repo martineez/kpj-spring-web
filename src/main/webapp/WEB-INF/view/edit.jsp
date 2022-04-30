@@ -14,12 +14,27 @@
 	</head>
 	<body>
 		<h2><spring:message code="book.header" /></h2>
-		
-		<!-- TODO: Use Spring JSTL for form (commandName, action, method)-->
-		<!-- TODO: Test if exist info message and show it -->
-		<!-- TODO: Create table which contains field name (from resource bundle), input field, error info -->
-		<!-- TODO: Add submit button -->
-		
+
+		<form:form method="POST" action="/springweb/edit" modelAttribute="book">
+            <form:label path="name"><spring:message code="book.name" /></form:label>
+            <form:input path="name" />
+
+            <form:label path="author"><spring:message code="book.author" /></form:label>
+            <form:input path="author" />
+
+            <form:label path="pages"><spring:message code="book.pages" /></form:label>
+            <form:input path="pages" />
+
+            <input type="submit" value="Submit" />
+        </form:form>
+
+        <c:if test="${not empty infomsg}">
+            <h3>${infomsg}</h3>
+        </c:if>
+		<c:if test="${not empty errormsg}">
+            <h3>${errormsg}</h3>
+        </c:if>
+
 		<br/>
 		<spring:url value="/" var="indexUrl" />
 		<a href="${indexUrl}"><spring:message code="msg.index" /></a>

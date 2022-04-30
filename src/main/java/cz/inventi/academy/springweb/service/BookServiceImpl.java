@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import cz.inventi.academy.springweb.model.Book;
+import org.springframework.stereotype.Service;
 
-//TODO: Write annotation for service
+@Service
 public class BookServiceImpl implements BookService {
 
     private long ids;
