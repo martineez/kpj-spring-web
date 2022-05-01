@@ -7,4 +7,12 @@
 
 
 	<!-- TODO: Define component scan and message source resource bundle (UTF-8) -->
+	<context:component-scan base-package="cz.inventi.academy.springweb" />
+	<bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
+	</bean>
+
+	<bean id="validator"
+		  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+
 </beans>

@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Welcome</title>
+		<title>Welcome braaaaa</title>
 	</head>
 	<body>
 		<h2><spring:message code="msg.index" /></h2>
