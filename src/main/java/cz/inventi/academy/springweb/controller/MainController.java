@@ -44,9 +44,7 @@ public class MainController {
 
     @RequestMapping(value = "/edit", method = POST)
     public String formSave(Model model, @Valid @ModelAttribute("book") Book book, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("error", bindingResult);
-        } else {
+        if (!bindingResult.hasErrors()) {
             bookService.save(book);
             model.addAttribute("info", messageSource.getMessage("info.book.saved", null, getLocale()));
         }
