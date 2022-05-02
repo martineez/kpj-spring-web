@@ -4,6 +4,6 @@ services:
   tomcat:
     image: tomcat:9-alpine
     ports:
-      - 8081:8080
+      - "3000:8000"
     volumes:
       - ./target:/usr/local/tomcat/webapps/:rw
